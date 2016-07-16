@@ -46,15 +46,15 @@ app.get('/', function(req, res, next) {
       next(err);
     }
     else {
-      console.log(row);
+      // console.log(row);
       var page = html.builder();
       if (alert==="add"){
       page += '<div class="alert">bookmark successfully added! </div><table>'
     } else if (alert==="delete"){
-      page += '<div class="alert">bookmark successfully deleted! </div><table>'
+      page += '<div class="alert2">bookmark successfully deleted! </div><table>'
     }
     else {
-      page += '<div class="alert2"> test Welcome! </div><table>'
+      page += '<div class="alert3"> test Welcome! </div><table>'
     }
 
       for (var j=0; j <row.length; j++){
