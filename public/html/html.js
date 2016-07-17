@@ -32,7 +32,5 @@ html += '</html>'
 return html;
 };
 
-
-
 module.exports.builder = htmlBuilder;
 module.exports.closer = htmlCloser;
