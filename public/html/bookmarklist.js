@@ -1,4 +1,4 @@
-var html            = require ('./html.js');
+var html          = require ('./html.js');
 
 function bookmarkList(row, j){
   var site    ='';
@@ -9,7 +9,5 @@ function bookmarkList(row, j){
   site += '</tr>';
   return site;
 };
-
-
 
 module.exports.list = bookmarkList;
