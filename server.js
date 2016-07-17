@@ -1,8 +1,7 @@
 var bodyParser    = require ('body-parser');
 var bookmarkList  = require ('./public/html/bookmarklist.js')
-var html          = require ('./public/html/html.js');
 var express       = require ('express');
-var path          = require ('path');
+var html          = require ('./public/html/html.js');
 var sqlite3       = require ('sqlite3').verbose();
 var db            = new sqlite3.Database('bookmarks.db');
 
@@ -29,11 +28,11 @@ db.get("SELECT name FROM sqlite_master WHERE type='table' AND name='bookmarks'",
 var app           = express();
 var port          = process.env.PORT || 3993;
 
+app.use(express.static(__dirname + '/public/assets/images'));
 app.use(express.static(__dirname + '/public/css'));
 app.use(express.static(__dirname + '/public/html'));
 app.use(express.static(__dirname + '/public/js'));
-app.use(express.static(__dirname + '/public/assets/images'));
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended:false}));
 
 app.get('/', function(req, res, next) {
   db.all('SELECT * FROM bookmarks ORDER BY title', function(err, row) {
@@ -55,7 +54,7 @@ app.get('/', function(req, res, next) {
         page += '</table>'
         page += html.closer();
         alert="none";
-      res.send(page);
+        res.send(page);
     }
   });
 });

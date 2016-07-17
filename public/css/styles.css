@@ -55,11 +55,11 @@ td {
 }
 
 tr:nth-child(n){
- background-color: #ff6b6b;
+  background-color: #ff6b6b;
 }
 
 tr:nth-child(2n+1){
- background-color: #d1464a;
+  background-color: #d1464a;
 }
 
 .title a {
@@ -93,9 +93,10 @@ a:hover {
 }
 
 .delete:hover {
-transform: rotate(360deg);
-color:#fff3f3;
+  transform: rotate(360deg);
+  color:#fff3f3;
 }
+
 /****************************************
             Add/Delete Alerts
 ****************************************/

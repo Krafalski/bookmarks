@@ -23,13 +23,13 @@ function htmlBuilder (){
 };
 
 function htmlCloser (){
-var html = '';
-html +=  '</div>';//close wrapper
-html += '</div>'; //close container
-html += '<script src="app.js"></script>'
-html += '</body>'
-html += '</html>'
-return html;
+  var html = '';
+  html +=  '</div>';//close wrapper
+  html += '</div>'; //close container
+  html += '<script src="app.js"></script>'
+  html += '</body>'
+  html += '</html>'
+  return html;
 };
 
 module.exports.builder = htmlBuilder;
