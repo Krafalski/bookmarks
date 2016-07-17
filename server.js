@@ -35,7 +35,7 @@ app.use(express.static(__dirname + '/public/js'));
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.get('/', function(req, res, next) {
-  db.all('SELECT * FROM bookmarks ORDER BY title', function(err, row) {
+  db.all('SELECT * FROM bookmarks ORDER BY title COLLATE NOCASE ', function(err, row) {
     if(err !== null) {
       next(err);
     } else {
